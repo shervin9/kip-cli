@@ -1,0 +1,21 @@
+name: Build and Release
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          profile: minimal
+      - run: cargo build --release
+      - run: tar -czvf ktp-cli.tar.gz ./target/release/ktp
+      - uses: actions/upload-artifact@v3
+        with:
+          name: ktp-cli
+          path: ktp-cli.tar.gz
