@@ -1,10 +1,11 @@
 [package]
 name = "ktp-cli"
 version = "0.1.0"
-authors = ["Shervin Salmanzadeh <shervin.salmanzadeh@gmail.com"]
+authors = ["Shervin Salmanzadeh shervin.salmanzadeh@gmail.com"]
 description = "A Rust CLI tool for Kubernetes"
 license = "MIT"
 repository = "https://github.com/shervin9/ktp-cli.git"
+edition = "2021"
 
 [dependencies]
 colored = "2.0"
